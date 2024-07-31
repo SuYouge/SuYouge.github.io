@@ -3,7 +3,7 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: mind-map
+title: MIND-MAP
 subtitle: ''
 description: ''
 keywords:
@@ -104,3 +104,26 @@ deploy:
   type: 'git'
   repo: 'https://github.com/SuYouge/suyouge.github.io.git'
   branch: 'main'
+
+# Mathjax
+mathjax:
+  tags: none # or 'ams' or 'all'
+  single_dollars: true # enable single dollar signs as in-line math delimiters
+  cjk_width: 0.9 # relative CJK char width
+  normal_width: 0.6 # relative normal (monospace) width
+  append_css: true # add CSS to pages rendered by MathJax
+  every_page: false # if true, every page will be rendered by MathJax regardless the `mathjax` setting in Front-matter
+  packages: # extra packages to load
+  extension_options: {}
+    # you can put your extension options here
+    # see http://docs.mathjax.org/en/latest/options/input/tex.html#tex-extension-options for more detail
+
+# pandoc
+pandoc:
+  # 此处填的是你的pandoc的路径
+  pandoc_path: "C:/Program Files/Pandoc/pandoc.exe"
+  filters:
+  extra:
+  template:
+  meta:
+  mathEngine: # 默认为mathjax
