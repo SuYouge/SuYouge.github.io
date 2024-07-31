@@ -121,7 +121,7 @@ mathjax:
 # pandoc
 pandoc:
   # 此处填的是你的pandoc的路径
-  pandoc_path: "C:/Program Files/Pandoc/pandoc.exe"
+  pandoc_path: 
   filters:
   extra:
   template:
