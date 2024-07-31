@@ -35,15 +35,46 @@ ETH的教程里有两个例子
 
 一般形式如下
 $$
-u(x) = \sum_iH_i(x)u_i=\boldsymbol{H}u
+u(x) = \sum_iH_i(x)u_i=\bf{H}u
 $$
 其中
 
 - $u(x)$为待研究的变量，例如此处的displacement field
-- $\boldsymbol{H}(x)$为shape function matrix
+- $\bf{H}\it({x})$为shape function matrix
 
 在FEM中通常这个函数是多项式形式的，一般有一下三种
 
 1. Lagrange
 2. Serendipity
 3. Hermitian
+
+## 5. Jacobian和刚度矩阵的导出
+
+Jacobian连接起局部坐标系和全局参数$\phi$（如位移）的关系，等参变换的合理性也与此矩阵有关
+$$
+\begin{bmatrix}
+\frac{\partial \phi}{\partial r}\\
+\frac{\partial \phi}{\partial s}\\
+\frac{\partial \phi}{\partial t}
+\end{bmatrix} = 
+\begin{bmatrix}
+\frac{\partial x}{\partial  r} && \frac{\partial y}{\partial  r} && \frac{\partial z}{\partial  r}\\
+\frac{\partial x}{\partial  s} && \frac{\partial y}{\partial  s} && \frac{\partial z}{\partial  s}\\
+\frac{\partial x}{\partial  t} && \frac{\partial y}{\partial  t} && \frac{\partial z}{\partial  t}
+\end{bmatrix}\begin{bmatrix}
+\frac{\partial \phi}{\partial x}\\
+\frac{\partial \phi}{\partial y}\\
+\frac{\partial \phi}{\partial z}
+\end{bmatrix}
+$$
+体积变换，面积变换以及长度变换都有相应的表达式
+
+刚度矩阵的导出涉及kinematic的建立即strain-displacement矩阵的建立，记为$\epsilon = \bf{B} \hat{u}$
+
+则刚度矩阵由以下积分给出
+$$
+\begin{align}
+\bf{K} &= \int_V\bf{B}^T\bf{C}\bf{B}\rm{d}V\\
+&=\int_V\bf{B}^T\bf{C}\bf{B}  \rm{det}\bf{J}\rm{d}\it{r}\rm{d}\it{s}\rm{d}\it{t}
+\end{align}
+$$
