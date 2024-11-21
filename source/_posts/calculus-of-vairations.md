@@ -72,3 +72,9 @@ $$
 
 强迫余量在域内n个点上为零，取权函数为狄拉克函数（[Dirac function](https://en.wikipedia.org/wiki/Dirac_delta_function)），$W_j = \delta(x - x_i)$。由于狄拉克函数的特性，配点法只需要令余量为0就可以构建相应的方程组，来求解待定参数$a_i$。即$\bf R=A(Na) = 0$。
 
+## 4. 等几何分析
+
+根据“Isogeometric Analysis: Toward Integration of CAD and FEA” 3.3节的内容，可以导出等级和分析下的伽辽金法，配点法，最小二乘法的形式。
+
+
+
